@@ -16,9 +16,6 @@ class Time extends Component{
     }
     click(i,j){
       console.log(i,j);
-      return(
-        <Puzzle />
-      );
     };
     render(){
       return(
