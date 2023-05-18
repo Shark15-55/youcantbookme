@@ -1,10 +1,13 @@
-// import logo from './logo.svg';
-import './App.css';
-import Schdule from './schdule';
+// import React, { useState } from "react";
+import Puzzle from "./puzzle";
+import Schdule from "./schdule";
 
 function App() {
   return (
-    <Schdule />
+    <div>
+      <Schdule />
+      {/* <Puzzle /> */}
+    </div>
   );
 }
 

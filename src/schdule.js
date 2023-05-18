@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Puzzle from "./puzzle";
 
 function Schdule() {
   return (
@@ -15,7 +16,10 @@ class Time extends Component{
     }
     click(i,j){
       console.log(i,j);
-    }
+      return(
+        <Puzzle />
+      );
+    };
     render(){
       return(
           <table>
