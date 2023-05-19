@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Puzzle from "./puzzle";
+
+
 
 function Schdule() {
   return (
@@ -14,14 +15,14 @@ class Time extends Component{
       this.days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday',];
       this.times = ['10:00', '11:00','12:00', '1:00', '2:00', '3:00', '4:00',];
     }
-    click(i,j){
-      console.log(i,j);
-    };
+    // click(i,j){
+    //   console.log(i,j);
+    // };
     render(){
       return(
           <table>
             <thead>
-              <tr>
+              <tr className="Days">
               {this.days.map((day) => (
                   <th key ={day}>{day}</th>
               ))
