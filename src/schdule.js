@@ -1,5 +1,6 @@
 import React, { Component, useState } from "react";
 import Puzzle from "./puzzle";
+import { auth } from "./firebase"
 
 
 
@@ -11,6 +12,7 @@ function Schdule() {
   return (
     <div>
       {puzzle ? <Time updatePuzzle={updatePuzzle}/>:<Puzzle />}
+      <button onClick={() => auth.signOut()}>Sign out</button>
     </div>
   );
 }
