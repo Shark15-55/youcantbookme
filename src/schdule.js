@@ -1,11 +1,16 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
+import Puzzle from "./puzzle";
 
 
 
 function Schdule() {
+  const [puzzle, setPuzzle] = useState(true)
+  const updatePuzzle = () => {
+    setPuzzle(false);
+  }
   return (
     <div>
-      <Time />
+      {puzzle ? <Time updatePuzzle={updatePuzzle}/>:<Puzzle />}
     </div>
   );
 }
@@ -15,9 +20,7 @@ class Time extends Component{
       this.days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday',];
       this.times = ['10:00', '11:00','12:00', '1:00', '2:00', '3:00', '4:00',];
     }
-    // click(i,j){
-    //   console.log(i,j);
-    // };
+    
     render(){
       return(
           <table>
@@ -34,7 +37,7 @@ class Time extends Component{
             this.times.map((time,i) => (
               <tr key = {time}>
                 {this.days.map((day,j) => (
-                <TimeSlot key = {j*this.days.length + i} onClick = {() => this.click(i,j)} time={time}/>
+                <TimeSlot key = {j*this.days.length + i}  time={time} updatePuzzle={this.props.updatePuzzle}/>
                 ))
                 }
               </tr>
@@ -47,12 +50,17 @@ class Time extends Component{
   }
   
   function TimeSlot(props){
+    const clicked = (e) => {
+      console.log("Clicked");
+      props.updatePuzzle();
+    };
+
     return(
         <td>
-          <div onClick = {() => props.onClick()} className = "time">
+          <div onClick = {e => {clicked(e)}} className = "time">
             {props.time}
-          </div>
+          </div> 
         </td>
-    )
+    );
   }
   export default Schdule;

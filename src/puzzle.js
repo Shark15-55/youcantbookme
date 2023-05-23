@@ -13,7 +13,7 @@ function Rebus() {
     const [answer, setAnswer] = useState(" ");
 
     function submit() {
-        if (answer === "Children's University School") {
+        if (answer.toLowerCase() === " children's university school" || answer.toLowerCase() === "children's university school") {
           alert("you win");
           console.log("winner");
         }else{
